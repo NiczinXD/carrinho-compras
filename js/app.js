@@ -3,6 +3,7 @@ const listaProdutos = document.getElementById('lista-produtos');
 const valorTotal = document.getElementById('valor-total');
 const carrinhoDeProdutos = document.getElementById('carrinho__produtos__produto');
 const valorTotalPagina = document.getElementById('valor-total');
+const formulario = document.querySelector('.formulario');
 let totalGeral = 0;
 
 
@@ -24,7 +25,7 @@ function adicionar(){
     totalGeral += totalProduto;
 
     if(qtd <= 0){
-        alert('Aprende a contar imbecil, como eu vou adicionar 0 itens?');
+        alert('Insira uma quantidade válida!');
         return;
     }
     
@@ -40,4 +41,5 @@ function limpar(){
     listaProdutos.textContent = '';
     valorTotalPagina.textContent = 'R$0,00';
     totalGeral = 0;
+    formulario.reset();
 }
